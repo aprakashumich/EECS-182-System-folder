@@ -1,0 +1,281 @@
+To create this appliance, here are the basic steps:
+
+1. Download the latest release of Mint as an iso. Use that as the boot image 
+to create to a Linux virtual machine with VirtualBox or VMWare.
+
+2. svn checkout the System directory as
+
+svn checkout https://whereabouts.eecs.umich.edu/182dist System
+
+Run ~/System/Setup/initialize.sh
+
+It should take care of most of the steps below.
+
+------------------
+
+SHOULD NOT NEED TO DO
+
+2. Update the standard software:
+
+
+Add the following lines to /etc/apt/sources.list:
+
+deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu maverick main
+sudo apt-get update
+sudo apt-get upgrade
+
+
+
+
+3. Install required packages for EECS 182. The list is given in the file "installedpackages".
+
+
+
+Create symbolic links.
+
+sudo dpkg --clear-selections
+sudo dpkg --set-selections < ./installedpackages
+sudo apt-get -u dselect-upgrade 
+
+(Or sudo apt-get dselect-upgrade install)
+
+This should install the required packages. Some packages may be removed
+
+
+6. Fix Firefox. This was tricky.
+
+I placed a script in ~me/System/bin/fixfirefox.sh. Here are the steps: 
+
+sudo rm -rf /usr/lib/firefox/extensions/mint-search-enhancer@linuxmint.com
+sudo cp /usr/lib/firefox-addons/searchplugins/en-US/google.xml /home/me/System/b
+in/originalgoogle.xml
+sudo cp /home/me/System/bin/google.xml /usr/lib/firefox-addons/searchplugins/en-
+US/google.xml
+
+Where /home/me/System/bin/google.com contains the following:
+
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/">
+<ShortName>Google</ShortName>
+<Description>Google Search</Description>
+<InputEncoding>UTF-8</InputEncoding>
+<Image width="16" height="16">data:image/x-icon;base64,R0lGODlhEAAQAPfLAAATVikwd
+A8SnxUfgAsWpAAilholjxw4jBc7kwAlvQQ2sRMsoBUqqhMzuhY/vxw4tSgmiyM1mSUztiQ6sTE3sQ4qy
+xMxxRoyxiAuxR1CtBxJsBxasSJuuTFguBte0Rlf2xVc9h9W9xVjzxVr0gdj6BRh4R1o5yBcyiZbyydT1
+i9b2Ddb1iFY6CJg2Vpor1dzvEJu20Z0yi23QDy1REi2OUy0O1WzOVC4PU+tVUe5Sk2xQU2zRUO4UE21U
+la2SmKEqWWF2HyPx2+a6X6e6Xqk1m+s78sUDs4UGdEQB9YfDdwaANEfHd0YEscjAM4mAM0qANIoD9IkG
+dslGswuItYgL4aP0ImP2YGZ36Opzaq2wq/S+rzX/7/e8MrS1MLO/sTb48rT8snX/83c89PZ+crq+cH1/
+9Dl/9Ln/93r/9fy/+Hf7P/42eDm/O7u/+T29uX2/eT2/+f4/+f5/+j/9u//8+3/9u7/9ur5/+j//+n//
++v//u3//+7//e7//+////b66/T/6vX/6/f/7f/07fj/4fv/4Pj/5v/45v7/4/r+7/3/6fDw+Pfx//D/9
+/X/8fT/8/f/8ff/8/D///H///L8/fL///P///X7//b6/ff/+/T///b9//f///v19//w9v/09P/29v/x+
+f/y///z///1+v/1///2///3//j79P/58/z/8/z99/z/9v7/9P7/9vn7//v6//j9//n9//j///n///v//
+vv////4+v/5+//6+P/4///6/P/6/v/6///7///9+P/8+v/9+v7/+Pz////8/f/9/f79///8///9//7//
+////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAMsALAAAAAAQABAAA
+Aj/AEn4oIFjBw8bOnrMuJGjhowZM1T8UdYJUZ5ZcNRYWjSrVK5QU0DMmtUnzRAXEy4o6FCEy6NDTkQIq
+1MmRgM0eZTlCXMgQJtRSE4gmgUkwh1EiZTNUiamy6NUUExcuoJgDCdDjQg9KgVL2SNFT1hwEvKglLBWu
+ixZ+jSrlSBdRlL04bBBkTBdpZTpIqWsFaBcTEr0QaEhl6dWlswKW6poDRUPlmAUQKWMkTJLc76QMQNGU
+ZMWgIgkCFJnlq5WXigwkFClVZQQyuRgELAlk7JBymCZGYAF0ZEPrQixgUDAihxVdPpoAZAFUZIRfThxg
+vPCwAILDipk+OFG2ZIVoxApERtPfvwlvZ+kQFzPvv0MJQEBADs=</Image>
+<Url type="application/x-suggestions+json" method="GET" template="http://suggest
+queries.google.com/complete/search?output=firefox&amp;client=firefox&amp;qu={sea
+rchTerms}"/>
+<Url type="text/html" method="GET" template="http://www.google.com/search">
+  <Param name="hl" value="en"/>
+  <Param name="q" value="{searchTerms}"/>
+</Url>
+</SearchPlugin>
+
+
+Do:
+
+     sudo apt-get update
+     sudo apt-get install python2.5
+
+
+Install python set-up tools.
+
+cd /tmp
+wget http://pypi.python.org/packages/2.5/s/setuptools/setuptools-0.6c11-py2.5.egg
+sudo sh setuptools-0.6c11-py2.5.egg
+
+
+Install python2.5-dev and libjpeg62-dev and pil
+
+sudo apt-get install python2.5-dev
+sudo apt-get install libjpeg62-dev (This may not be necessary)
+sudo easy_install-2.5 pil
+
+
+----------------------------------
+
+WILL NEED TO DO
+---------------------------------
+
+
+
+4. Install Google Chrome
+
+
+Step #1: Download Google Chrome from Google's site
+
+step #2 : Open the saved file with Ubuntu Software Center (Right Click on the Package, then select Open With USC; click on install Button to proceed) or Use the dpkg command to install the package. To install from the command line, type the command given below and enter your login password to proceed.
+
+sudo dpkg -i google-chrome-stable_current_i386.deb
+
+
+
+
+5. Install VMWare Tools (VMware only)
+
+If on VMWare, install vmware tools. From the mounted ISO image, copy the VMWareTools.tgz file on the CD somewhere on your file system. Unarchive it. cd to vmware-tools-distrib. Execute "vmware-install.pl" as root. Follow the directions.
+
+
+
+On a browser upgrade by Mint, this may need to be fixed again. 
+
+7. Install Google App Engine.
+
+This requires first installing python2.5.
+
+
+Step 1: Follow instructions here:
+
+http://blog.perthulin.com/2011/01/installing-python-25-on-ubuntu-1010.html
+
+
+
+Get Google App Engine for Python (Linux version) from Google and install it as instructed. You will download the zip file, unzip it.
+
+You need to change the first line of dev_appserver.py (and possibly other .py files in the distribution)
+
+from
+
+#!/usr/bin/env python
+
+to 
+
+#!/usr/bin/env python2.5
+
+(Alternatively, you can run the python programs as python-2.5 file.py)
+
+Reason: Ubuntu/Mint's default version of Python is 2.7. Google app engine unfortunately requires Python, v2.5 and does not work with Python 2.7. We therefore also installed python2.5 on this machine and must invoke it on the google app engine by modifying the first line. 
+
+
+To run the demo in the distribution, do:
+
+python2.5 dev_appserver.py demos/guestbook
+(you can place this in a run.sh file)
+
+To make the above shorter, you can also do:
+
+dev_appserver.py demos/guestbook
+
+Because of the first line in dev_appyserver.py and the file being executable, this will automatically invoke python2.5 on the python file.
+
+Then, open a web browser on this virtual machine and go to http://localhost:8080.
+
+
+Emacs
+----
+
+Verify that Emacs works correctly on python programs. The following things
+were installed:
+
+- Python-mode
+- Auto-completion
+- ipython shell within emacs
+
+Apache
+------
+
+apt-get install apache2
+apt-get install libapache2-mod-python 
+
+Create a python.conf file in /etc/apache2/conf.d with the following content:
+
+
+LoadModule python_module modules/mod_python.so
+<Directory /var/www/scripts/>
+  Options Indexes FollowSymLinks MultiViews
+  AllowOverride None
+  Order allow,deny
+  allow from all
+  AddHandler mod_python .py
+  PythonHandler mod_python.publisher
+  PythonDebug On
+</Directory>
+
+This basically allows apache2 to invoke Python programs. Those Python programs need to reside in /var/www/scripts.
+
+Create a directory /var/www/scripts/ 
+
+To test things out, place a file calcdeposit.html in /var/www: 
+
+<html>
+<body>
+      <p>Please provide input below:</p>
+  <form action="scripts/mycalc.py/computeinterest" method="POST">
+
+      Deposit Amount:    <input type="text" name="deposit"><br>
+      Interest rate:   <input type="text" name="interest"><br>
+      Number of years:   <input type="text" name="years"><br>
+      <input type="submit">
+
+  </form>
+</body>
+</html>
+
+
+Also, create a Python file mycalc.py in /var/www/scripts to handle the above form: 
+
+#mycalc.py
+import mod_python
+
+def computeinterest(deposit, interest, years):
+    '''INPUTS: deposit, interest, and the number of years in string form. Comes from the Web form.
+       EFFECTS: returns back an HTML page with the results of the final deposit'''
+    # convert values to numbers
+    fdeposit = float(deposit)
+    finterest = float(interest)
+    iyears = int(years)
+    # compute the balance at the end
+    balance = fdeposit * ((1+finterest/100.0)**iyears)
+
+    result = ''   # 
+    headerpart = '''
+        <!DOCTYPE HTML>
+        <HTML>
+        <BODY>
+        <H1> Test Result </H1>
+	'''
+    middlepart = '''
+	<p> You entered ${deposit} for the deposit.</p> 
+	<p> You entered ${interest} for the interest. </p>
+	<p> You entered ${years} for the years.</p>
+        <p> Money at the end = ${balance}.</p>
+	'''
+    endpart = '''
+        </BODY>
+        </HTML>
+        '''
+
+    # compute the resulting HTML page and store in result.
+
+    
+    result = headerpart
+    # compute the middle part
+    middlestring = middlepart.replace("${deposit}", str(fdeposit))
+    middlestring = middlestring.replace("${years}", str(iyears))
+    middlestring = middlestring.replace("${interest}", str(finterest));
+    middlestring = middlestring.replace("${balance}", str(balance));
+    result = result + middlestring;  # concatenate
+    result = result + endpart;     # concatenate
+    return result    # This is important. Instead of writing HTML to file,
+                     # it needs to be returned to Apache
+#mycalc.py
+
+Test things out by going to http://localhost/calcdeposit.html.
+
+
+

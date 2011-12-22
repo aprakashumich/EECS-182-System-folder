@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/182dist/!svn/ver/1/dotemacs.d/site-lisp/old/python-mode.el-6.0.2/test
+END
+python-mode-test.el
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/182dist/!svn/ver/1/dotemacs.d/site-lisp/old/python-mode.el-6.0.2/test/python-mode-test.el
+END
+py-bug-numbered-tests.el
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/182dist/!svn/ver/1/dotemacs.d/site-lisp/old/python-mode.el-6.0.2/test/py-bug-numbered-tests.el
+END
+python-mode-test.elc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/182dist/!svn/ver/1/dotemacs.d/site-lisp/old/python-mode.el-6.0.2/test/python-mode-test.elc
+END
+py-bug-numbered-tests.elc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/182dist/!svn/ver/1/dotemacs.d/site-lisp/old/python-mode.el-6.0.2/test/py-bug-numbered-tests.elc
+END
+doctest-mode.el
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/182dist/!svn/ver/1/dotemacs.d/site-lisp/old/python-mode.el-6.0.2/test/doctest-mode.el
+END
+pars-part-output.el
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/182dist/!svn/ver/1/dotemacs.d/site-lisp/old/python-mode.el-6.0.2/test/pars-part-output.el
+END
+test-triple-strings.py
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/182dist/!svn/ver/1/dotemacs.d/site-lisp/old/python-mode.el-6.0.2/test/test-triple-strings.py
+END
+UnicodeEncodeError-lp:550661-test.py
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/182dist/!svn/ver/1/dotemacs.d/site-lisp/old/python-mode.el-6.0.2/test/UnicodeEncodeError-lp:550661-test.py
+END
+python-mode-tests.sh
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/182dist/!svn/ver/1/dotemacs.d/site-lisp/old/python-mode.el-6.0.2/test/python-mode-tests.sh
+END
