@@ -1,0 +1,5 @@
+*.pyc
+*~
+dotemacs.d/auto-save-list/*
+dotemacs.d/session*
+dotemacs.d/ac-comphist*

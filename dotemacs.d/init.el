@@ -5,6 +5,10 @@
 (add-to-list 'ac-dictionary-directories "/home/me/.emacs.d/site-lisp/ac-dict")
 (ac-config-default)
 
+
+; make cut and paste put things on the clipboard for pasting to the terminal
+(setq x-select-enable-clipboard t)
+
 ; 
 ; 
 ; ; Turn on Pyhton auto-complete mode
@@ -13,11 +17,8 @@
 (require 'smart-operator)
 ; 
 
-(setq ipython-command "/usr/bin/ipython")
-;(setq py-default-interpreter "ipython")
 (require 'python-mode)
-(require 'ipython)
-
+(setq py-python-command "/usr/bin/python2.5")
 (require 'yasnippet)
 (yas/initialize)
 
