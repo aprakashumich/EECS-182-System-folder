@@ -3,23 +3,19 @@
 # used for comments.
 
 # Step 1: To run this program, in a terminal window, type "python2.5
-# viewme.py" (at the bottom of the screen do: Menu->Terminal). You can
+# first_program.py" (at the bottom of the screen do: Menu->Terminal). You can
 # open a different terminal window if your first window is running the
 # emacs command.
 
-# If you're editing this file in emacs, and you want to get rid of the
-# split window, go to the menus at the top, File -> Remove Splits
+# If you're editing this file in emacs, and you see a split windown
+# and want to get rid of it, go to the menus at the top, File ->
+# Remove Splits
 
 def hello():
     print "-----------------------------------------------------"
     print "Welcome to EECS 182"
     print "I hope you enjoy the class."
     print "Practice using the emacs editor with this file"
-    print "If you mess up the file, you can alway restore it by executing"
-    print "cp ~/System/first_program.py ~/first_program.py"
-    print "\n"
-    print "To get started with editing, in a terminal window enter the command"
-    print "emacs first_program.py"
     print "-----------------------------------------------------"
     print "\n"   	# print a newline to create a blank line
 
@@ -40,7 +36,7 @@ hello()
 # doesn't work, hit the ESC key 3 times.
 
 # Step 3: Now, insert "hello()" back into the editor buffer below this
-# line.  Save the file. Run ipython to see the results. You will
+# line.  Save the file. Run python2.5 to see the results. You will
 # notice that as you are typing the letters of "hello", the editor
 # presents you auto-complete choices. Some of the the choices other
 # than the word "hello" are in-built python variables. You will find
@@ -51,10 +47,16 @@ hello()
 # it is probably easier from the menu. You can repeatedly do this to
 # keep undoing stuff.
 
-# Step 5: Now, let's try the redo features. Type "Esc-x". You will a
-# M-x (or Meta-x) appear at the bottom of the screen. At this point
-# emacs is waiting for a command.  type "redo". You can repeat the
-# process any number of times.
+# Step 5: Now, try a Python program that uses variables. Uncomment the
+# lines below, and fill in values for width, height, length, and you.
+
+# width = 0
+# height = 0
+# length = 0
+# me = "<your name here>"
+# print "Volume = ", width*height*length
+# print "My name is", me
+
 
 # You can get by with just that much knowledge of the keyboard
 # commands in emacs, plus extensive use of the menus at the top. But
