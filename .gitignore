@@ -1,5 +1,10 @@
-*.pyc
+*.swp
+*.dSYM
+*.o
+*.out
+^core
 *~
-dotemacs.d/auto-save-list/*
-dotemacs.d/session*
-dotemacs.d/ac-comphist*
+*.lock
+*.DS_Store
+*.pyc
+
