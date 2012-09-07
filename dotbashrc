@@ -1,7 +1,8 @@
 export LESS="-R"
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -c"
+export EDITOR="emacsclient -c -n" 
+#export VISUAL="emacsclient"
 export PYTHONPATH="/home/me/System/swampy-2.0"
-#alias emacs="emacsclient -c"
+alias emacs="emacsclient -c -n" 
 PATH=$PATH:.
 #PS1="\w% "
