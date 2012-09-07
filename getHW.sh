@@ -14,9 +14,9 @@ done
 # Make another copy
 for hwfolder in *
 do
-    if [ ! -d /home/me/Homeworks_OriginalVersion/hwfolder" ]; then
+    if [ ! -d /home/me/Homeworks_OriginalVersion/"$hwfolder" ]; then
         echo making directory /home/me/Homeworks_OriginalVersion/"$hwfolder"
         mkdir -p /home/me/Homeworks_OriginalVersion/"$hwfolder"
     fi
-    cp -f -r "$hwfolder"/* /home/me/Homeworks/"$hwfolder"/     
+    cp -f -r "$hwfolder"/* /home/me/Homeworks_OriginalVersion/"$hwfolder"/     
 done
