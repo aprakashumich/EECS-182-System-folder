@@ -29,5 +29,5 @@ int main() {
 
   // Submit the revised program and a screenshot
   // of the running program.
-  cout << "Hello World";
+  cout << "Hello World" << endl;
 }
