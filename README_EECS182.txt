@@ -23,7 +23,7 @@ Open a terminal window (Menu -> Terminal). Run the following on the
 prompt:
 
      cd ~/System
-     git pull
+     git pull github182 master
 
 This runs a program called git to pull updates to the above files from
 a master repository.  (Later in the semester, you'll learn about git
@@ -32,7 +32,7 @@ directory, you may need to resolve conflicts. For that reason, we urge
 you not to edit any files in the System directory.
 
 NOTE: This does not update OS software on the machine. Continue doing
-normal OS updates, if you wish. I believe Mint Linux will do that
+normal OS updates, if you wish (optional). I believe Mint Linux will do that
 automatically for you at times.
 
 
