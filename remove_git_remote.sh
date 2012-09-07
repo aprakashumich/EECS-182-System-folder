@@ -1,2 +1,2 @@
 #!/bin/sh
-git remote rm github182
+git remote rm origin

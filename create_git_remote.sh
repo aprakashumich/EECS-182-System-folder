@@ -1,2 +1,2 @@
 #!/bin/sh
-git remote add github182 https://github.com/aprakashumich/EECS-182-System-folder.git
+git remote add origin https://github.com/aprakashumich/EECS-182-System-folder.git
