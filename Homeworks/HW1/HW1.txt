@@ -1,0 +1,6 @@
+In this assignment, you will be following the instructions in p1.py and p2.cpp.
+Use Emacs for editing the files. 
+
+Submit your solutions on ctools under Assignments.
+
+
