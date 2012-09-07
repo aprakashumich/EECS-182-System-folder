@@ -13,3 +13,6 @@
 # of "Hello World"
 
 print "Hello World"
+
+# Submit the modified p1.py (it should have this name) and a screenshot that shows it produces
+# the correct output when run in the Python interpreter.
