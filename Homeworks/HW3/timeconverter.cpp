@@ -74,6 +74,7 @@ int main() {
   assert(hours2 == hours);
   assert(minutes2 == minutes);
   assert(seconds2 == seconds);
+  cout << "Congratulations! You passed all the checks on this run" << endl;
 
  
 

@@ -87,6 +87,7 @@ correctness checks. Do not modify these checks.
 assert(hours2 == hours);
 assert(minutes2 == minutes);
 assert(seconds2 == seconds);
+print "Congratulations! You passed all the checks on this run";
 
  
 
