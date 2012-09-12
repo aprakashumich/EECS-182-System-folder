@@ -4,6 +4,7 @@ using namespace std;
 
 /* File: timeconverter.cpp
  * Your name: PUT YOUR NAME HERE.
+ * Acknowledgements: ADD ANY ACKNOWLEDGEMENTS HERE. 
  */
 
 int main() {
@@ -60,20 +61,37 @@ int main() {
   // Recompile and run your program with several different inputs.
   // When hours, minutes, and seconds are all non-negative minutes < 60
   // and seconds < 60, you should not get any assertion failure errors.
+  // Do not modify the variables timeinsecs, hours, minutes, or seconds.
 
   // On the other hand, you should continue to get assertion failure errors 
   // when the above constrains on inputs are not observed.
+  /************************** Your code goes here **********/
 
 
 
 
+  /************************** End of your code ************/
   // END OF YOUR CODE. No changes needed below this line.
-  // Correctness check. C++ gives as an assert function to help do
+  // We have provided some correctness checks. 
+  // C++ gives as an assert function to help do
   // correctness checks. Do not modify these checks.
+  
+  // Check that the time values in seconds match before conversion
+  // and after conversion
+  cout << "Time is: " << hours2 << ":" << minutes2 << ":" << seconds2 << endl;
+  assert(timeinsecs == hours2 * 60 * 60 + minutes2 * 60 + seconds2);
+  if (timeinsecs >= 0) {
+	  assert(minutes2 < 60 && seconds2 < 60);
+	  assert(minutes2 >= 0 && seconds2 < 60);
+  }
 
-  assert(hours2 == hours);
-  assert(minutes2 == minutes);
-  assert(seconds2 == seconds);
+  if (hours >= 0 && minutes >= 0 && seconds >= 0 && minutes < 60 &&
+	  seconds < 60) {
+	  assert(hours2 == hours);
+	  assert(minutes2 == minutes);
+	  assert(seconds2 == seconds);
+  }
+  
   cout << "Congratulations! You passed all the checks on this run" << endl;
 
  

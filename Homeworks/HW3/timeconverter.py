@@ -84,11 +84,21 @@ Correctness check. C++ gives as an assert function to help do
 correctness checks. Do not modify these checks.
 '''
 
-assert(hours2 == hours);
-assert(minutes2 == minutes);
-assert(seconds2 == seconds);
-print "Congratulations! You passed all the checks on this run";
+# Check that the time values in seconds match before conversion
+# and after conversion
+print "Time is: " + str(hours2) + ":" + str(minutes2) + ":" + str(seconds2);
+assert(timeinsecs == hours2*60*60 + minutes2*60 + seconds2);
+if (timeinsecs >= 0):
+    assert(minutes2 < 60 and seconds2 < 60);
+    assert(minutes2 >= 0 and seconds2 < 60);
+    
+if (hours >= 0 and minutes >= 0 and seconds >= 0 and minutes < 60 and
+    seconds < 60): 
+    assert(hours2 == hours);
+    assert(minutes2 == minutes);
+    assert(seconds2 == seconds);
 
+print "Congratulations! You passed all the checks on this run";
  
 
 '''
