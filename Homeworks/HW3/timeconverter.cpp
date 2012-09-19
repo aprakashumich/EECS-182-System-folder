@@ -58,13 +58,13 @@ int main() {
 
   // YOUR CODE GOES BELOW.It should compute hours2, minutes2,
   // and seconds2 from timeinsecs.
-  // Recompile and run your program with several different inputs.
-  // When hours, minutes, and seconds are all non-negative minutes < 60
-  // and seconds < 60, you should not get any assertion failure errors.
-  // Do not modify the variables timeinsecs, hours, minutes, or seconds.
+  // Recompile and run your program with several different inputs, including
+  // values that are out of range, such as negative values, 0, and
+  // 60 or larger.
 
-  // On the other hand, you should continue to get assertion failure errors 
-  // when the above constrains on inputs are not observed.
+  // The assertions are written to not fail even if the values are
+  // out of range.
+
   /************************** Your code goes here **********/
 
 
@@ -82,7 +82,7 @@ int main() {
   assert(timeinsecs == hours2 * 60 * 60 + minutes2 * 60 + seconds2);
   if (timeinsecs >= 0) {
 	  assert(minutes2 < 60 && seconds2 < 60);
-	  assert(minutes2 >= 0 && seconds2 < 60);
+	  assert(minutes2 >= 0 && seconds2 >= 0);
   }
 
   if (hours >= 0 && minutes >= 0 && seconds >= 0 && minutes < 60 &&
