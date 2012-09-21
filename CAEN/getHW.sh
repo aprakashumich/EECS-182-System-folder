@@ -1,36 +1,39 @@
 #!/bin/sh
 
+# Turn on debugging as statements execute
+set -x
 
 # copies files from sourcedir to destdir recursively. Flags should
 # normally be -i or -f for interactive or forced copy.
 copyfiles() {
+    set +x
     sourcedir=$1;
-    echo "sourcedir=${sourcedir}"
     destdir=$2;
-    echo "destdir=${destdir}"
     flags=$3;
-    echo "flags=${flags}"
     cd ${sourcedir}
     for hwfolder in *
     do
 	if [ ! -d "${destdir}/$hwfolder" ]; then
-            echo making directory "${destdir}/$hwfolder"
-            mkdir -p ${destdir}/"$hwfolder"
+	    #echo "Making directory ${destdir}/${hwfolder}" 
+            mkdir -p ${destdir}/"${hwfolder}"
 	fi
-	echo "Copying homework files to ${HomeworksFolder}/${howfolder}"
-	echo "flags = ${flags}"
-	echo "dollar3 = $flags"
-	echo "cp ${flags} -r ${sourcedir}/${hwfolder}/* ${destdir}/${hwfolder}/"
+	#echo "Copying homework files to ${HomeworksFolder}/${howfolder}"
 	cp ${flags} -r "${sourcedir}/${hwfolder}"/* ${destdir}/"${hwfolder}"/
     done
+    set -x
 }
 
+set +x
 BASEDIR=~/Private/eecs182
+set -x
 mkdir -p ${BASEDIR}
 cd ${BASEDIR}
+set +x
 if [ ! -d "System" ]; then
+	set -x
 	echo "creating eecs182 software folder"
 	git clone https://github.com/aprakashumich/EECS-182-System-folder.git System
+	set +x
 fi
 
 if [ ! -d "System" ]; then
@@ -48,14 +51,15 @@ HWDIR=${BASEDIR}/System/Homeworks
 
 # Make a Homeworks folder if necessary under BASEDIR for the students.
 HWFOLDER=${BASEDIR}/Homeworks
-echo "mkdir -p ${HWFOLDER}"
+echo "Creating ${HWFOLDER} if necessary"
 mkdir -p ${HWFOLDER}
 ORIGHWFOLDER=${BASEDIR}/Homeworks_OriginalVersion
+echo "Creating ${ORIGHWFOLDER} if necessary"
 echo "mkdir -p ${ORIGHWFOLDER}"
 mkdir -p ${ORIGHWFOLDER}
 
-echo "copyfiles ${HWDIR} ${HWFOLDER} \-i"
+echo "copying files from ${HWDIR} to ${HWFOLDER}"
 copyfiles ${HWDIR} ${HWFOLDER} \-i
-echo "copyfiles ${HWDIR} ${ORIGHWFOLDER} \-f"
+echo "copying files from ${HWDIR} to ${ORIGHWFOLDER}"
 copyfiles ${HWDIR} ${ORIGHWFOLDER} \-f
-#ln -s ${HWFOLDER} ~/Homeworks
+set +x
