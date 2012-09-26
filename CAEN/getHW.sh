@@ -59,7 +59,7 @@ echo "mkdir -p ${ORIGHWFOLDER}"
 mkdir -p ${ORIGHWFOLDER}
 
 echo "copying files from ${HWDIR} to ${HWFOLDER}"
-copyfiles ${HWDIR} ${HWFOLDER} \-i
+copyfiles ${HWDIR} ${HWFOLDER} \-u \-i
 echo "copying files from ${HWDIR} to ${ORIGHWFOLDER}"
-copyfiles ${HWDIR} ${ORIGHWFOLDER} \-f
+copyfiles ${HWDIR} ${ORIGHWFOLDER} \-u \-f
 set +x
