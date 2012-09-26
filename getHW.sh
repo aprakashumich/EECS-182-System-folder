@@ -8,7 +8,7 @@ do
         echo making directory /home/me/Homeworks/"$hwfolder"
         mkdir -p /home/me/Homeworks/"$hwfolder"
     fi
-    cp -i -r "$hwfolder"/* /home/me/Homeworks/"$hwfolder"/     
+    cp -i -u -r "$hwfolder"/* /home/me/Homeworks/"$hwfolder"/     
 done
 
 # Make another copy
@@ -18,5 +18,5 @@ do
         echo making directory /home/me/Homeworks_OriginalVersion/"$hwfolder"
         mkdir -p /home/me/Homeworks_OriginalVersion/"$hwfolder"
     fi
-    cp -f -r "$hwfolder"/* /home/me/Homeworks_OriginalVersion/"$hwfolder"/     
+    cp -f -u -r "$hwfolder"/* /home/me/Homeworks_OriginalVersion/"$hwfolder"/     
 done
