@@ -1,0 +1,12 @@
+To autograde your program partially, run the following within Mint or on a CAEN Linux machine 
+by logging to vnc.engin.umich.edu. This only grades extract.cpp and printmovieitem.cpp. Other files 
+are graded manually. Your program files must be in the current directory.
+
+% sh grademyprogram.sh | more
+
+
+The program may output some HTML, which you can ignore.  Hit Space key to page through 
+the output. The autograder is basically testing your program on a couple of movies, comparing
+your solution to a reference solution.
+
+
