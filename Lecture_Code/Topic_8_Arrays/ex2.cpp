@@ -8,7 +8,8 @@ void squares(int B[])
 {
   B[4] = B[4]*B[4];
   cout << "B[4] = " << B[4] << endl;
-  cout << "A[4] = " << A[4] << endl;
+  // This is not allowed.
+  // cout << "A[4] = " << A[4] << endl;
 }
 
 void foo(int y) {
