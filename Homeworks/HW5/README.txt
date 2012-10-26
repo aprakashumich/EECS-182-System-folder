@@ -1,3 +1,9 @@
+These were the original instructions. A revised set of instructions are
+available in Homework_Writeup.pdf.
+
+
+-------- OLD WRITEUP -------
+
 The goal of this assignment is to use functions and string processing to read movie information from a string and then write the movie information in HTML format. 
 
 The movie information is represented in a string in the following format:
