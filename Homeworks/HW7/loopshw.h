@@ -1,7 +1,7 @@
 // Write functions to compute the following things 
 
 // Computes average of values in array A that is of size n.
-extern double average(int A[], int n);
+double average(int A[], int n);
 
 
 // Compute average of values in array A (that is of size n) for
@@ -11,12 +11,12 @@ extern double average(int A[], int n);
 // The function should return -1 if there are no values between 0 and 100.
 // See test_average_validrange() in main.cpp for some additional
 // examples. 
-extern double average_validrange(int A[], int n);
+double average_validrange(int A[], int n);
 
 
 
 // Computes the maximum values in array A of size n.
-extern int maximum(int A[], int n);
+int maximum(int A[], int n);
 
 
 
