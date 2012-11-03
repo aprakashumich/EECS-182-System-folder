@@ -6,3 +6,6 @@ main.o: main.cpp
 
 loopshw.o: loopshw.cpp
 	g++ -c -Wall -g loopshw.cpp
+
+grade:
+	sh grademyprogram.sh
