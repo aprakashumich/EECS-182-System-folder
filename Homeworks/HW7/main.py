@@ -58,7 +58,7 @@ def test_print_letters_frequency_table():
     g.close();
     if (profcontent != studentcontent):
         print "print_letters_frequency_table failed"
-        print "Your output and comedyoferrors_correctoutput.txt differ"
+        print "Your output and correct output differ"
     else:
         print "You passed the print_letters_frequency_table test"
 
@@ -77,16 +77,16 @@ def main():
     print_letters_frequency_table("macbeth.txt", 
                                   "macbeth_results.txt");
 
-    print "Run the following to see if your output matches the correct output;"
+    print "Run the diff command as in the instructions to see if your output matches the correct output, e.g.,;"
     print;
-    print "% diff comedyoferrors_result.txt comedyoferrors_result_correct.txt";
+    print "% diff comedyoferrors_results.txt comedyoferrors_results_correct.txt";
     print;
     print "The above command should produce no output on a perfect match.";
     print "If you get some differences, then your output is not correct.";
     print;
-    print "Run a similar diff command on macbeth_result.txt and macbeth_result_correct.txt";
-
-
+    print "Run a similar diff command on the macbeth files";
+    
+        
 
 
 # Call main() to run all the tests.
