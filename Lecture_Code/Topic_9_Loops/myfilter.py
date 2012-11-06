@@ -16,6 +16,7 @@ def myfilter(A):
     return B;
 
 def myfilter2(A):
+    '''This function filters for numbers divisible by 3'''
     B = [];
     for elem in A:
         if (elem % 3 == 0):
@@ -23,11 +24,15 @@ def myfilter2(A):
     # end of the loop
     return B;
 
-def my_general_filter(Predicate, A):
-    '''This function filters for numbers divisible by 3'''
+def my_general_filter(predicate, A):
+    '''
+    This function filters for any predicate function.
+    INPUTS: predicate function. predicate(element) should return True/False
+    A: a list of elements
+    '''
     B = [];
     for elem in A:
-        if (Predicate(elem)):
+        if (predicate(elem)):
             B.append(elem); # B = B + [elem];
     # end of the loop
     return B;
