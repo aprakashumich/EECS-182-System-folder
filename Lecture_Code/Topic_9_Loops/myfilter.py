@@ -15,6 +15,18 @@ def myfilter(A):
     # end of the loop
     return B;
 
+
+X = [1, 2, 4, 3, 5, 10, 25, 18, 19];
+RESULT = myfilter(X);
+print "X = ", X;
+print "myfilter(X) result", RESULT;
+
+Y = [2, 10, 11, 6, 4, 3];
+RESULT2 = myfilter(Y);
+print "Y = ", Y;
+print "myfilter(Y) result", RESULT2;
+
+
 def myfilter2(A):
     '''This function filters for numbers divisible by 3'''
     B = [];
@@ -23,6 +35,14 @@ def myfilter2(A):
             B.append(elem); # B = B + [elem];
     # end of the loop
     return B;
+
+X = [1, 2, 4, 3, 5, 10, 25, 18, 19];
+Y = [2, 10, 11, 6, 4, 3];
+print "X = ", X;
+print "myfilter2(X) result", myfilter2(X);
+print "Y = ", Y;
+print "myfilter2(Y) result", myfilter2(Y);
+
 
 def my_general_filter(predicate, A):
     '''
@@ -36,18 +56,7 @@ def my_general_filter(predicate, A):
             B.append(elem); # B = B + [elem];
     # end of the loop
     return B;
-    
 
-X = [1, 2, 4, 3, 5, 10, 25, 18, 19];
-RESULT = myfilter(X);
-print RESULT;
-
-Y = [2, 10, 11, 6, 4, 3];
-RESULT2 = myfilter(Y);
-print RESULT2;
-
-print myfilter2(X);
-print myfilter2(Y);
 
 def is_odd(x):
     if (x % 2 == 0):
@@ -55,12 +64,14 @@ def is_odd(x):
     else:
         return True;
 
-print my_general_filter(is_odd, X);
 
 def divisible_by_three(x):
     return (x % 3 == 0);
 
-print my_general_filter(divisible_by_three, X);
+L = [1, 2, 4, 3, 5, 10, 15, 17, 19, 21, 18, 16, 25];
+print "L = ", L;
+print "my_general_filter(is_odd, L):", my_general_filter(is_odd, L);    
+print "my_general_filter(divisible_by_three, L): ",  my_general_filter(divisible_by_three, L);
 
 # Assigning f as being equivalent to function is_odd
 # Functions are FIRST-CLASS OBJECTS. This means you can them assign
