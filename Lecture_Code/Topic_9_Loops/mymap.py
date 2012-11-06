@@ -95,3 +95,10 @@ print "sum of cubes of odd values for A using loop: ", sum;
 # multiple machines, unlike the loop, which is inherently sequential. 
 # Google uses filter/map/reduce paradigm # extensively for 
 # some large-scale data analysis tasks. 
+
+
+# Using lambda functions
+
+L = [1, 2, 4, 8];
+print "Sum of elements of L: ", reduce(lambda x, y : x+y, L);
+print "Product of elements of L: ", reduce(lambda x, y : x*y, L);
