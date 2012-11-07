@@ -7,7 +7,7 @@ ex1.out:	example1.cpp
 
 ex2.out:	example2.cpp
 	g++ -g -Wall example2.cpp -o ex2.out
-	ex4.out
+	ex2.out
 
 	
 ex3.out:	example3.cpp

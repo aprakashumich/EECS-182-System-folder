@@ -38,9 +38,8 @@ void read_inputfile() {
     while (true) { 
         // This reads a line from readstream into inline. We must check
         // the return value to see if getline succeeded.
-        bool success = getline(readstream, inputline, '\n'); 
-        if (!success) break; // exit the loop if getline fails. End-of-file.
-        //
+        bool status = getline(readstream, inputline, '\n'); 
+        if (!status) break; // exit the loop if getline fails. End-of-file.
         cout << inputline << endl;
         // Update the global variables, line counter and # of characters on each line.
         perline_charcount[linecount] = inputline.length();

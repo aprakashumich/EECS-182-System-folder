@@ -18,8 +18,8 @@ using namespace std;
 int charactercount;   // Cummulative count of number of characters in the file read.
 
 /* 
-This function reads lines from sampleinput.txt, prints them out,
-counts characters in them and updates the global variable
+This function reads lines from sampleinput.txt, prints the lines out,
+and counts characters in them and updates the global variable
 charactercount 
 */
 
@@ -39,10 +39,10 @@ void read_inputfile() {
     // File open. Now read the lines.
     while (true) {
         // This reads a line from readstream into inline. It does not read the
-        // terminating newline character. success is set to false if
+        // terminating newline character. status is set to false if
         // the call fails, e.g., at end-of-file
-        bool success = getline(readstream, inputline); 
-        if (!success) break; // Exit the loop if getline failed. EOF reached.
+        bool status = getline(readstream, inputline); 
+        if (!status) break; // Exit the loop if getline failed. EOF reached.
 
         // Now you can do what you want with inputline. We will print the line.
         cout << inputline << endl;
@@ -50,7 +50,6 @@ void read_inputfile() {
         // the global variable.
         charactercount += inputline.length();
     }
-
     readstream.close();
 }
 
