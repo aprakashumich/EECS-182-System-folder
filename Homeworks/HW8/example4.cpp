@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <stdlib.h>
 using namespace std;
 
 /* This program shows how to read an input file with lines of the
@@ -34,8 +35,8 @@ void read_tabular_file() {
         // It will do type conversion for us. We must check for 
         // errors. readstatus will be false if there is an error in reading, 
         // typically on end-of-file.
-        bool readstatus = readstream >> firststring >> secondnum;
-        if (readstatus == false) break;   // Exit the loop. EOF reached.
+        bool readstatus = (readstream >> firststring >> secondnum);
+        if (readstatus == false)  break;   // Exit the loop. EOF reached.
         cout << "number part: " << secondnum << endl;
     }
     readstream.close(); 
