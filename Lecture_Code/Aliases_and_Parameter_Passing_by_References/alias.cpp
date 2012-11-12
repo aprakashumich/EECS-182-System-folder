@@ -32,17 +32,25 @@ void f2() {
     cout << "Final a, b (alias), c = " << a << ", " << b << ", " << c << endl;
 }
 
-/* Returning multiple values from a function. This function returns
-   p/q and p % q in reference parameters quotient and remainder. It
-   also returns true if q is non-zero and false otherwise to indicate
-   success or failure in computing p/q and p % q.
+/* Illustrates returning multiple values from a function. This
+   function returns p/q and p % q in reference parameters quotient and
+   remainder. It also returns true if q is non-zero and false
+   otherwise to indicate success or failure in computing p/q and p %
+   q.
 */
 
-bool f3(int p, int q, int &quotient, int &remainder) {
+bool divandmodulo(int p, int q, int &quotient, int &remainder) {
     if (q == 0) return false; // quotient and remainder not relevant.
     quotient = p/q;
     remainder = p % q;
     return true;
+}
+
+void stringtest() {
+    string s1 = "abc";
+    string &s2 = s1;
+    s2 = "def";
+    cout << s1 << endl;
 }
 
 int main() {
@@ -51,14 +59,16 @@ int main() {
     cout << "computing 5/3 and 5 % 3 using m1 function" << endl;
     int a, b;
 
-    /* test the function f3 above */
+    /* test the function divandmodulo above */
 
-    bool status = f3(5, 3, a, b);
+    bool status = divandmodulo(5, 3, a, b);
     cout << "success status of dividing 5 and 3 = " << status << endl;
     cout << "quotient of 5 and 3 = " << a << endl;
     cout << "remainder of 5 and 3 = " << b << endl;
-    status = f3(5, 0, a, b);
+    status = divandmodulo(5, 0, a, b);
     cout << "success status of dividing 5 and 0 = " << status << endl;
+
+    stringtest();
     
 }
 
