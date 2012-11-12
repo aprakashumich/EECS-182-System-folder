@@ -56,6 +56,7 @@ void runq2() {
     // Q8: What is the value of y? 
 }
 
+
 bool q3(double a, double result) {
     if (a < 0) {
         result = sqrt(a);
@@ -73,9 +74,11 @@ void runq3() {
     status = q3(0,  y);
     assert(status = false);
 
-    // Q8: There is a bug in q3. What is the appropriate fix so that
-    // the assert tests pass?
+    // Q: There is a bug in q3. What is the appropriate fix so that
+    // the assert tests pass? You do not have to answer this on the
+    // test center. Just work it out and make sure understand.
 }
+
 
 
 int x;
@@ -138,6 +141,7 @@ void runq6() {
     // Q14: What is the value of y here?
     // Q15: What is the value of z here?
 }
+
 
 
 
