@@ -2,7 +2,7 @@
 using namespace std;
 
 
-int x = 0;
+int x = 0;         // Declare a global variable x
 
 void f1() {
     x = x + 1;     // x refers to global x
