@@ -6,8 +6,8 @@ and process them.
 
 f = open("sampleinput.txt", "r"); # open a file for reading
 # iterate through the lines in f
-while line in f:
-    print "line length = ", length(line);
+for line in f:
+    print "line length = ", len(line);
 f.close();
 
 
