@@ -21,7 +21,10 @@ void print_rational(Rational r) {
 }
 
 // Multiply two rational numbers and return the resulting rational number.
-Rational multiply(Rational r1, Rational r2) {
+// This version uses reference parameters, which is preferred for
+// passing around structures. Use const for semantics similar to 
+// pass-by-value.
+Rational multiply(const Rational &r1, const Rational &r2) {
     Rational result;
     result.p = r1.p * r2.p;
     result.q = r1.q * r2.q;

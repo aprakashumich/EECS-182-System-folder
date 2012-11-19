@@ -21,11 +21,30 @@ void print_rational(Rational r) {
 }
 
 // Multiply two rational numbers and return the resulting rational number.
-Rational multiply(Rational r1, Rational r2) {
+// This version uses reference parameters, which is preferred for
+// passing around structures. Use const for semantics similar to 
+// pass-by-value.
+Rational multiply(const Rational &r1, const Rational &r2) {
     Rational result;
     result.p = r1.p * r2.p;
     result.q = r1.q * r2.q;
     return result;
+}
+
+// Computes product of two rationals a:b and c:d as (ad+bc):bd.
+Rational add(const Rational &r1, const Rational &r2) {
+    Rational result;
+    result.p = r1.p*r2.q + r2.p*r1.q;
+    result.q = r1.q*r2.q;
+    return result;
+}
+
+// Adds rational r2 to r1. The function does not return anything via
+// return value. It modifies r1. Note that r1 is a reference parameter and
+// is not constant, since we want to change r1.
+void addto(Rational &r1, const Rational &r2) {
+    r1 = add(r1, r2);
+    return;
 }
 
 
@@ -56,6 +75,26 @@ int main() {
          << r1.p << ":" << r1.q << " and " 
          << r2.p << ":" << r2.q  << " is "
          << r3.p << ":" << r3.q << endl;
+
+   // Try out add function.
+    r1 = create_rational(1, 2);
+    r2 = create_rational(2, 3);
+    r3 = add(r1, r2);
+    cout << "sum of " 
+         << r1.p << ":" << r1.q << " and " 
+         << r2.p << ":" << r2.q  << " is "
+         << r3.p << ":" << r3.q << endl;
+
+   // Try out addto function.
+    r1 = create_rational(1, 2);
+    r2 = create_rational(2, 3);
+    cout << "Old r1 = " << r1.p << ":" << r1.q << endl;
+    cout << "r2 = " << r2.p << ":" << r2.q << endl;
+    addto(r1, r2);
+    cout << "r1 and r2, respectively, after addto(r1,r2): " 
+         << r1.p << ":" << r1.q << " and " 
+         << r2.p << ":" << r2.q << endl;
+ 
 }
 
 
