@@ -8,11 +8,13 @@ def tostring_rational(r):
     return str(r[0]) + ":" + str(r[1]);
 
 def multiply(x, y):
+    '''multiply rationals x and y and return a rational'''
     num = x[0] * y[0];
     denom = x[1] * y[1];
     return [num, denom];
 
 def add(x, y):
+    '''add rationals x and y and return a rational'''
     result = [0, 0];   # Create a placeholder list for the result.
     result[0] = x[0]*y[1] + x[1]*y[0];
     result[1] = x[1]*y[1];
@@ -20,7 +22,7 @@ def add(x, y):
 
 
 def addto(x, y):
-    # Parameter x beccomes x*y and is modified if passed as a list.
+    '''add rational y to x. Rational x is modified. No other return value.'''
     result = add(x,y);
     x[0] = result[0];
     x[1] = result[1];
