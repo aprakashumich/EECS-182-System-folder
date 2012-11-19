@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 typedef struct {
@@ -14,10 +15,16 @@ Rational create_rational(int x, int y) {
     return result;
 }
 
-// Another convenience function to print out a rational value as a
-// ratio of its p and q to standard output.
-void print_rational(Rational r) {
-    cout << r.p << ":" << r.q << endl;
+
+// A convenience function to compute a string
+// form of a rational value for printing. To convert from
+// ints to strings, in C++, the easiest way is to write first
+// to a stringstream type and then convert to a string. 
+
+string tostring_rational(Rational r) {
+    stringstream result;
+    result << "Rational(" << r.p << "," << r.q << ")";
+    return result.str();
 }
 
 // Multiply two rational numbers and return the resulting rational number.
@@ -40,25 +47,14 @@ int main() {
     r1 = create_rational(3, 4);
     r2 = create_rational(9, 5);
 
-    // Let's test assignment of rationals.
-    cout << "r1 before assignment: ";
-    print_rational(r1);
-    cout << "r2 before assignment: ";
-    print_rational(r2);
-    r1 = r2;
-    cout << "r1 after assignment: ";
-    print_rational(r1);
-    cout << "r2 after assignment: ";
-    print_rational(r2);
-
     // Try out multiply function.
     r1 = create_rational(1, 2);
     r2 = create_rational(2, 3);
     Rational r3 = multiply(r1, r2);
-    cout << "product of " 
-         << r1.p << ":" << r1.q << " and " 
-         << r2.p << ":" << r2.q  << " is "
-         << r3.p << ":" << r3.q << endl;
+    cout << "product of " << tostring_rational(r1) 
+         << " and " 
+         << tostring_rational(r2) << " is "
+         << tostring_rational(r3) << endl;
 }
 
 

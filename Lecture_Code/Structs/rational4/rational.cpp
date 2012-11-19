@@ -1,10 +1,12 @@
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 typedef struct {
     int p;
     int q;
 } Rational;
+
 
 // Create a  rational number from two integers and return it.
 Rational create_rational(int x, int y) {
@@ -14,11 +16,18 @@ Rational create_rational(int x, int y) {
     return result;
 }
 
-// Another convenience function to print out a rational value as a
-// ratio of its p and q to standard output.
-void print_rational(Rational r) {
-    cout << r.p << ":" << r.q << endl;
+
+// A convenience function to compute a string
+// form of a rational value for printing. To convert from
+// ints to strings, in C++, the easiest way is to write first
+// to a stringstream type and then convert to a string. 
+
+string tostring_rational(const Rational &r) {
+    stringstream result;
+    result << "Rational(" << r.p << "," << r.q << ")";
+    return result.str();
 }
+
 
 // Multiply two rational numbers and return the resulting rational number.
 // This version uses reference parameters, which is preferred for
@@ -56,46 +65,37 @@ int main() {
     r1 = create_rational(3, 4);
     r2 = create_rational(9, 5);
 
-    // Let's test assignment of rationals.
-    cout << "r1 before assignment: ";
-    print_rational(r1);
-    cout << "r2 before assignment: ";
-    print_rational(r2);
-    r1 = r2;
-    cout << "r1 after assignment: ";
-    print_rational(r1);
-    cout << "r2 after assignment: ";
-    print_rational(r2);
 
     // Try out multiply function.
     r1 = create_rational(1, 2);
     r2 = create_rational(2, 3);
     Rational r3 = multiply(r1, r2);
-    cout << "product of " 
-         << r1.p << ":" << r1.q << " and " 
-         << r2.p << ":" << r2.q  << " is "
-         << r3.p << ":" << r3.q << endl;
+    cout << "product of " << tostring_rational(r1) 
+         << " and " 
+         << tostring_rational(r2) << " is "
+         << tostring_rational(r3) << endl;
+
 
    // Try out add function.
     r1 = create_rational(1, 2);
     r2 = create_rational(2, 3);
     r3 = add(r1, r2);
-    cout << "sum of " 
-         << r1.p << ":" << r1.q << " and " 
-         << r2.p << ":" << r2.q  << " is "
-         << r3.p << ":" << r3.q << endl;
+    cout << "sum of " << tostring_rational(r1) 
+         << " and " 
+         << tostring_rational(r2) << " is "
+         << tostring_rational(r3) << endl;
+
 
    // Try out addto function.
     r1 = create_rational(1, 2);
     r2 = create_rational(2, 3);
-    cout << "Old r1 = " << r1.p << ":" << r1.q << endl;
-    cout << "r2 = " << r2.p << ":" << r2.q << endl;
+    cout << "Old r1 = " << tostring_rational(r1) << endl;
+    cout << "r2 = " << tostring_rational(r2) << endl;
     addto(r1, r2);
     cout << "r1 and r2, respectively, after addto(r1,r2): " 
-         << r1.p << ":" << r1.q << " and " 
-         << r2.p << ":" << r2.q << endl;
- 
-}
+         << tostring_rational(r1) << " and " 
+         << tostring_rational(r2) << endl;
+ }
 
 
 

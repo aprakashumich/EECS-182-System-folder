@@ -5,7 +5,7 @@ def create_rational(p, q):
 
 def tostring_rational(r):
     '''This returns a string version of r. Does not actually print'''
-    return str(r[0]) + ":" + str(r[1]);
+    return "Rational(" + str(r[0]) + ", " + str(r[1]) + ")";
 
 def multiply(x, y):
     '''multiply rationals x and y and return a rational'''
