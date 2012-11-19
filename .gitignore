@@ -7,4 +7,7 @@
 *.lock
 *.DS_Store
 *.pyc
+#*
+*#
+.*
 
