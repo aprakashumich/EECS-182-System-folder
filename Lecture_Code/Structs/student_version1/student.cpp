@@ -26,7 +26,7 @@ int main() {
     // Initialize s2
     s2.firstname = "Adam";
     s2.lastname = "Smith";
-    s2.entry_year = "2011";
+    s2.entry_year = 2011;
     s2.college = "University of Michigan";
 
     // Print s2's fields.
