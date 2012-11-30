@@ -1,0 +1,16 @@
+grade: copystudentcode gradeextract.out rungradeextract.out 
+
+copystudentcode: 
+	rm -rf tmp
+	mkdir tmp
+	cp extract.cpp tmp
+	cp extract.h tmp
+	cp runprogram.pyc tmp
+	cp gradeextract.o tmp
+	touch tmp/GRADE.txt
+
+gradeextract.out: gradeextract.o extract.cpp
+	cd tmp; g++ -g -Wall gradeextract.o extract.cpp -o $@
+
+rungradeextract.out:gradeextract.out
+	cd tmp; python runprogram.pyc gradeextract.out 5 GRADE.txt
