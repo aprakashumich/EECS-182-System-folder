@@ -5,7 +5,7 @@ copystudentcode:
 	touch GRADE.txt
 	rm -rf tmp
 	mkdir tmp
-	cp ../*.h ../extract.cpp ../extract.h ../hw8.cpp ../u.item ../u.data ../hw8.py tmp
+	cp ../*.h ../extract.cpp ../hw8.cpp ../u.item ../u.data ../hw8.py tmp
 
 copyproffiles:
 	cp ../runprogram.pyc tmp
