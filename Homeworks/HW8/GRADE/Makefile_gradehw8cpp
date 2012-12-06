@@ -19,6 +19,10 @@ copyproffiles:
 	cp rundiff.py tmp
 	cp ratings_md5_1.txt tmp
 	cp ratings_md5_2.txt tmp
+	cp ratings_md5_float.txt tmp
+	cp ratings_md5_linux_float.txt tmp
+	cp u.data tmp
+	cp u.item tmp
 
 
 gradeextract.out:
