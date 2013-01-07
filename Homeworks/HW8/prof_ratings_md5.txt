@@ -1,5 +1,0 @@
-Following MD5s are acceptable.
-
-Your ratings.txt contains -nan: fd6fc7b7b2078ef57a4fb43dac002ccc
-
-Your ratings.txt contains nan:  d6fbd27906bb626896db8811a3ddad5d

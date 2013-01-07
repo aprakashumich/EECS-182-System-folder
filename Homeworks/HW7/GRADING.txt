@@ -1,9 +1,0 @@
-To grade your program using the autograder, do either of the following:
-
-% sh grademyprogram.sh
-
-OR
-
-% make grade
-
-
