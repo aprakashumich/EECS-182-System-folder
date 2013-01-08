@@ -12,7 +12,8 @@ Students: You should do all your work outside the System directory.
 The Homeworks folder contains your homeworks. Follow the instructions
 in README.txt when you start doing your homeworks.
 
-We will be making frequent use of Terminal app.  Try the following out. 
+We will be making frequent use of Terminal app (Menu -> Terminal).  
+Get familiar with the following commands: 
 
 List contents of current folder (called directory in Linux)
 % ls
