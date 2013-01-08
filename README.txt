@@ -13,11 +13,9 @@ To pull new changes to the system when instructed, you will do:
 
 % sh getupdates.sh
 
-The Homeworks folder contains your homeworks. Run the following in that folder
-when instructed to fetch updates to the homeworks.
+The Homeworks folder contains your homeworks. Follow the instructions
+in README.txt when you start doing your homeworks.
 
-% cd Homeworks
-% sh gethomework.sh
 
 This virtual machine is designed for EECS 182 use. 
 
@@ -38,15 +36,19 @@ Change to home directory:
 Change to a subdirectory:
 % cd subdirectory
 
-Another way to change to home:
-% cd ~
-(~ is an alias for home directory)
+E.g., to change to Homeworks folder from home, you can do:
+% cd Homeworks
 
-Change to parent directory:
+To get back to Home from anywhere:
+% cd
+
+To change to HW1 directory within Homework, you can do it in two steps::
+
+% cd Homework
+% cd HW1
+
+Change to immediate parent directory:
 % cd ..
-
-Change to root directory:
-% cd /
 
 Find where you are in the directory structure:
 % pwd
@@ -67,18 +69,22 @@ Renaming a file:
 Copying a file:
 % cp filename newfilename
 
-
 Copying an entire folder
 % cp -r directoryname newdirectoryname
 
-Logging into a remote computer on CAEN
+Logging into a remote computer on CAEN using command-line
 % ssh loginlinux.engin.umich.edu  -l <userid>
 
 Logging into a remote computer on ITD
 % ssh login.itd.umich.edu -l <userid>
 
-Backup a folder to a remove computer on ITD to the Private directory
+Copying a folder to a remove computer on ITD to the Private directory
 % scp -r <directory> youruserid@sftp.itd.umich.edu:Private
+
+Taking a screenshot:
+Use 
+Menu -> Accessories -> Take Screenshot
+
 
 
 
