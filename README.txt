@@ -1,4 +1,4 @@
-Welcome to EECS 182.
+Welcome to EECS 182.  This virtual machine is designed for EECS 182 use. 
 
 To get started, first do the following:
 
@@ -9,68 +9,75 @@ already open. This is your home folder.
 
 Students: You should do all your work outside the System directory.
 
-To pull new changes to the system when instructed, you will do:
-
-% sh getupdates.sh
-
 The Homeworks folder contains your homeworks. Follow the instructions
 in README.txt when you start doing your homeworks.
 
-
-This virtual machine is designed for EECS 182 use. 
-
-The System folder contains the files to help configure the bash shell, 
-emacs, and possibly other programs. Normally, you should not touch files in the 
-System folder. To do an update, do the following:
-
-
-Some useful terminal commands:
+We will be making frequent use of Terminal app.  Try the following out. 
 
 List contents of current folder (called directory in Linux)
 % ls
+
+Find where you are in the directory structure:
+% pwd
 
 Change to home directory:
 % cd
 
 
 Change to a subdirectory:
-% cd subdirectory
+% cd SUBDIRECTORY_NAME
+
+Check where you are using pwd.
+
 
 E.g., to change to Homeworks folder from home, you can do:
 % cd Homeworks
 
+Check where you are using pwd.
+
 To get back to Home from anywhere:
 % cd
 
-To change to HW1 directory within Homework, you can do it in two steps::
+Confirm that you are in your home directory using pwd or ls.
 
-% cd Homework
+To change to HW1 directory within Homeworks, you can do it in two steps:
+
+% cd Homeworks
 % cd HW1
 
-Change to immediate parent directory:
+Or using one step (first go back to home):
+% cd Homeworks/HW1
+
+To change to immediate parent directory:
 % cd ..
 
-Find where you are in the directory structure:
-% pwd
+Confirm that you are now in Homeworks folder.
 
-opening a file for editing using the Emacs editor
-% emacs filename
+Go back to home
+% cd
+
+Create a dummy directory for testing
+% mkdir tempdir
+
+Go into that:
+% cd tempdir
+
+Edit a file using the Emacs editor
+% emacs myfile.txt
+
+Write some content there and save the file from within Emacs.
 
 Reading a file on the terminal:
-% more <filename>
+% more myfile.txt
 
-Removing a file (no recovery possible):
+Copy the file:
+% cp myfile.txt myfile2.txt
 
-% rm filename
+Confirm the copy by using the "ls" command.
 
-Renaming a file:
-% mv filename newfilename
+Remove the copied file (no recovery possible):
 
-Copying a file:
-% cp filename newfilename
-
-Copying an entire folder
-% cp -r directoryname newdirectoryname
+% rm myfile2.txt
 
 Logging into a remote computer on CAEN using command-line
 % ssh loginlinux.engin.umich.edu  -l <userid>
@@ -78,12 +85,7 @@ Logging into a remote computer on CAEN using command-line
 Logging into a remote computer on ITD
 % ssh login.itd.umich.edu -l <userid>
 
-Copying a folder to a remove computer on ITD to the Private directory
-% scp -r <directory> youruserid@sftp.itd.umich.edu:Private
-
-Taking a screenshot:
-Use 
-Menu -> Accessories -> Take Screenshot
+Taking a screenshot: Use Menu -> Accessories -> Take Screenshot
 
 
 

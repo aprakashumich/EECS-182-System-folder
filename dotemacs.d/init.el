@@ -5,6 +5,12 @@
 (add-to-list 'ac-dictionary-directories "/home/me/.emacs.d/site-lisp/ac-dict")
 (ac-config-default)
 
+; set the default C++ mode to K&R style with 4 space offsets.
+(setq-default c-default-style "k&r"
+                c-basic-offset 4
+                  tab-width 4
+                  indent-tabs-mode nil)
+
 
 ; make cut and paste put things on the clipboard for pasting to the terminal
 (setq x-select-enable-clipboard t)
